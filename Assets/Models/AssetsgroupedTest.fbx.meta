@@ -3,7 +3,67 @@ guid: 218509e46a2f1a4458b6832afdba104e
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Aspenleaves_double
+    second: {fileID: 2100000, guid: 060dc4bd28851d04fa180c0b34e0c604, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Creek_double
+    second: {fileID: 2100000, guid: 060dc4bd28851d04fa180c0b34e0c604, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Creek_single
+    second: {fileID: 2100000, guid: 060dc4bd28851d04fa180c0b34e0c604, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grasspatchstatic_double
+    second: {fileID: 2100000, guid: 060dc4bd28851d04fa180c0b34e0c604, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground_single
+    second: {fileID: 2100000, guid: 060dc4bd28851d04fa180c0b34e0c604, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stonerock2_double
+    second: {fileID: 2100000, guid: 060dc4bd28851d04fa180c0b34e0c604, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stonerock2_single
+    second: {fileID: 2100000, guid: 060dc4bd28851d04fa180c0b34e0c604, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stonerock_single
+    second: {fileID: 2100000, guid: 060dc4bd28851d04fa180c0b34e0c604, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wonkytree_double
+    second: {fileID: 2100000, guid: 060dc4bd28851d04fa180c0b34e0c604, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wonkytree_single
+    second: {fileID: 2100000, guid: 060dc4bd28851d04fa180c0b34e0c604, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aspentrunk_double
+    second: {fileID: 2100000, guid: 060dc4bd28851d04fa180c0b34e0c604, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aspentrunk_single
+    second: {fileID: 2100000, guid: 060dc4bd28851d04fa180c0b34e0c604, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
