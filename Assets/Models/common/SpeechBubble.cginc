@@ -14,7 +14,7 @@ StructuredBuffer<bubble> sBuffer;
 float numBubbles;
 
 float bubbleVal(float3 worldPos) {
-	float sdfVal = 1;
+	float sdfVal = 2;
 
 	for (int i = 0; i < numBubbles; i++) {
 		bubble currBubble = sBuffer[i];
@@ -22,15 +22,11 @@ float bubbleVal(float3 worldPos) {
 		float animTime = 1;
 		float radius = currBubble.a * clamp(((_Time.y - currBubble.t)/animTime), 0, 1);
 
-		float currVal = distance(worldPos, currBubble.position) - radius;
+		float3 delta = worldPos - currBubble.position;
+		float distanceSq = dot(delta, delta);
+		float currVal = distanceSq - (radius*radius);
 
-		//first run
-		if (i == 0) {
-			sdfVal = currVal;
-		}
-		else if (currVal < sdfVal) {
-			sdfVal = currVal;
-		}
+		sdfVal = min(currVal, sdfVal);
 	}
 
 	//float4 currBubble = _ColorBubble;
@@ -38,7 +34,7 @@ float bubbleVal(float3 worldPos) {
 	//float radius = currBubble.w;
 	//sdfVal = distance(worldPos, bubbleLocation) - radius;
 	
-	return sdfVal;
+	return sign(sdfVal)*sqrt(abs(sdfVal));
 }
 
 float getMargin() {

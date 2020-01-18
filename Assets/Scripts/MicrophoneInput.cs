@@ -3,6 +3,7 @@
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
+    using UnityEngine.UI;
     using Valve.VR;
 
     public class MicrophoneInput : MonoBehaviour
@@ -10,6 +11,7 @@
         public SteamVR_Action_Boolean useVoice;
         public Material quillPaintMat;
         public static BubbleController bubbleController;
+        public Text debug;
 
         //bool MicrophoneIsAwake = false;
         AudioSource source;
@@ -131,6 +133,9 @@
                 sphere4.SetActive(false);
                 sphere5.SetActive(false);
             }
+
+            debug.text = bubbleController.BubbleCount.ToString();
+
         }
     }
 }

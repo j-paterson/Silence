@@ -9,6 +9,8 @@ namespace Prisma
         List<bubble> bubbles;
         ComputeBuffer cBuffer;
 
+        public int BubbleCount => bubbles.Count;
+
         struct bubble
         {
             public Vector3 position;
