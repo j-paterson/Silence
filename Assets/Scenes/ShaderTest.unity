@@ -120,68 +120,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &489310929 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2145064446069584982, guid: 6490ece0f1fbad1478491be87571888d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1706548347}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &878884719 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2145064446776806430, guid: 6490ece0f1fbad1478491be87571888d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1706548347}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1158474866 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2145064446866060841, guid: 6490ece0f1fbad1478491be87571888d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1706548347}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1267795860 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2145064445671585671, guid: 6490ece0f1fbad1478491be87571888d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1706548347}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1416637782 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2145064445799971901, guid: 6490ece0f1fbad1478491be87571888d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1706548347}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1470885249 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2145064447502900222, guid: 6490ece0f1fbad1478491be87571888d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1706548347}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1470885250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1470885249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0aae7bcd9b8cec4eaee6a417b02b221, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useVoice:
-    actionPath: 
-    needsReinit: 0
-  quillPaintMat: {fileID: 2100000, guid: b2d3837a9af8d5e40b42aaaf7be82ab2, type: 2}
-  volumeSensitivity1: 0.2
-  volumeSensitivity2: 0.3
-  volumeSensitivity3: 0.4
-  volumeSensitivity4: 0.5
-  volumeSensitivity5: 0.6
-  sphere1: {fileID: 489310929}
-  sphere2: {fileID: 878884719}
-  sphere3: {fileID: 1158474866}
-  sphere4: {fileID: 1267795860}
-  sphere5: {fileID: 1416637782}
 --- !u!1001 &1706548347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -189,6 +127,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1470885250, guid: 6490ece0f1fbad1478491be87571888d, type: 3}
+      propertyPath: useVoice.actionPath
+      value: /actions/default/in/GrabPinch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2070132600972890281, guid: 6490ece0f1fbad1478491be87571888d,
+        type: 3}
+      propertyPath: CapCollider
+      value: 
+      objectReference: {fileID: 1777152487}
     - target: {fileID: 2145064447404390903, guid: 6490ece0f1fbad1478491be87571888d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -249,10 +196,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2145064447353369979, guid: 6490ece0f1fbad1478491be87571888d, type: 3}
-    - {fileID: 2145064447502900220, guid: 6490ece0f1fbad1478491be87571888d, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6490ece0f1fbad1478491be87571888d, type: 3}
+--- !u!136 &1777152487 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 2145064447353369959, guid: 6490ece0f1fbad1478491be87571888d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1706548347}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1958123521
 GameObject:
   m_ObjectHideFlags: 0
