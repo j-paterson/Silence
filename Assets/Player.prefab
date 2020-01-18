@@ -1321,7 +1321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotationSpeed: 50
   FlipMovementDirection: 0
-  CapCollider: {fileID: 0}
+  CapCollider: {fileID: 2145064447353369959}
   MovementController:
     actionPath: /actions/default/in/JoystickLeft
     needsReinit: 0
@@ -2587,7 +2587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useVoice:
-    actionPath: 
+    actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
   quillPaintMat: {fileID: 2100000, guid: b2d3837a9af8d5e40b42aaaf7be82ab2, type: 2}
   volumeSensitivity1: 0.2
