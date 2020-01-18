@@ -4,10 +4,9 @@
 
 struct bubble
 {
-	float x;
-	float y;
-	float z;
+	float3 position;
 	float a;
+	float t;
 };
 
 float4 _ColorBubble;
@@ -19,9 +18,11 @@ float bubbleVal(float3 worldPos) {
 
 	for (int i = 0; i < numBubbles; i++) {
 		bubble currBubble = sBuffer[i];
-		float3 bubbleLocation = float3(currBubble.x, currBubble.y, currBubble.z);
-		float radius = currBubble.a;
-		float currVal = distance(worldPos, bubbleLocation) - radius;
+
+		float animTime = 1;
+		float radius = currBubble.a * clamp(((_Time.y - currBubble.t)/animTime), 0, 1);
+
+		float currVal = distance(worldPos, currBubble.position) - radius;
 
 		//first run
 		if (i == 0) {
@@ -36,7 +37,7 @@ float bubbleVal(float3 worldPos) {
 	//float3 bubbleLocation = float3(currBubble.x, currBubble.y, currBubble.z);
 	//float radius = currBubble.w;
 	//sdfVal = distance(worldPos, bubbleLocation) - radius;
-
+	
 	return sdfVal;
 }
 
