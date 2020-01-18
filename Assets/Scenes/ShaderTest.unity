@@ -120,6 +120,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!136 &698134774 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 2145064447353369959, guid: 6490ece0f1fbad1478491be87571888d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1706548347}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1706548347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,6 +133,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 470164705790088161, guid: 6490ece0f1fbad1478491be87571888d,
+        type: 3}
+      propertyPath: CapCollider
+      value: 
+      objectReference: {fileID: 698134774}
     - target: {fileID: 2145064447404390903, guid: 6490ece0f1fbad1478491be87571888d,
         type: 3}
       propertyPath: m_LocalPosition.x
