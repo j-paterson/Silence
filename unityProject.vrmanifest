@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.voiceproject.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "D:\\Unity Projects\\Silence\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Users\\jesse.paterson\\Projects\\Silence\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "Voice Project [Testing]"

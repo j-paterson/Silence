@@ -1,42 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class BubbleController : MonoBehaviour
+namespace Prisma
 {
-    public Material quillPaintMat;
-    List<Vector4> bubbles;
-    ComputeBuffer cBuffer;
-
-    // Start is called before the first frame update
-    void Start()
+    public class BubbleController
     {
-        bubbles = new List<Vector4>();
-        bubbles.Add(new Vector4(0,0,0,0.1f));
-        bubbles.Add(new Vector4(0, 1, 0, 0.1f));
-        bubbles.Add(new Vector4(0, 0, 1, 0.1f));
+        Material quillPaintMat;
+        List<Vector4> bubbles;
+        ComputeBuffer cBuffer;
 
-        cBuffer = new ComputeBuffer(bubbles.Count, sizeof(float) * 4);
-        cBuffer.SetData(bubbles);
+        public BubbleController(Material passedMat)
+        {
+            // Assign material
+            quillPaintMat = passedMat;
 
-        quillPaintMat.SetBuffer("sBuffer", cBuffer);
-        quillPaintMat.SetFloat("numBubbles", bubbles.Count);
-    }
+            //Build bubble list
+            bubbles = new List<Vector4>();
+            bubbles.Add(new Vector4(0, 0, 0, 0.1f));
+            bubbles.Add(new Vector4(0, 1, 0, 0.1f));
+            bubbles.Add(new Vector4(0, 0, 1, 0.1f));
 
-    void addBubble(Vector4 bubble)
-    {
-        bubbles.Add(bubble);
+            cBuffer = new ComputeBuffer(bubbles.Count, sizeof(float) * 4);
+            cBuffer.SetData(bubbles);
 
-        cBuffer = new ComputeBuffer(bubbles.Count, sizeof(float) * 4);
-        cBuffer.SetData(bubbles);
+            quillPaintMat.SetBuffer("sBuffer", cBuffer);
+            quillPaintMat.SetFloat("numBubbles", bubbles.Count);
+        }
 
-        quillPaintMat.SetBuffer("sBuffer", cBuffer);
-        quillPaintMat.SetFloat("numBubbles", bubbles.Count);
-    }
+        public void addBubble(Vector3 position, float amplitude)
+        {
+            Vector4 bubble = new Vector4(position.x, position.y, position.z, amplitude);
+            
+            bubbles.Add(bubble);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            cBuffer = new ComputeBuffer(bubbles.Count, sizeof(float) * 4);
+            cBuffer.SetData(bubbles);
+
+            quillPaintMat.SetBuffer("sBuffer", cBuffer);
+            quillPaintMat.SetFloat("numBubbles", bubbles.Count);
+        }
     }
 }

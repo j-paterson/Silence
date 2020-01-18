@@ -58,6 +58,8 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Assets/SpeechSDK/Plugins/iOS/libMicrosoft.CognitiveServices.Speech.core.a
+
 Assets/StreamingAssets/SteamVR/bindings_vive_cosmos_controller.json.meta
 Assets/StreamingAssets/SteamVR/bindings_vive_controller.json.meta
 Assets/StreamingAssets/SteamVR/bindings_oculus_touch.json.meta
