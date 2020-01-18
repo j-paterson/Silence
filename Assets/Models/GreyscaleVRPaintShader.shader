@@ -6,7 +6,9 @@
 		_Opacity("Opacity", Range(0.0, 1.0)) = 1.0
 		_LightThreshold("LightThreshold", Range(0.0, 1.0)) = 0.0
 		_LightSmoothness("LightSmoothness", Range(0.0003, 1.0)) = 1.0
+		_ColorBubble("ColorBubble", Vector) = (0, 0, 0, 0.1)
 	}
+	
 		SubShader
 	{
 		Tags { "RenderType" = "Opaque" "Queue" = "Geometry"}
@@ -33,6 +35,7 @@
 			#include "Lighting.cginc"
 			#include "AutoLight.cginc"
 			#include "common/DitherAlpha.cginc"
+			#include "common/SpeechBubble.cginc"
 
 			fixed4 _AmbientColor;
 			float _Opacity;
@@ -73,7 +76,32 @@
 			//fixed light = dot(normalize(i.world_pos), _WorldSpaceLightPos0.xyz);
 			fixed shadows = LIGHT_ATTENUATION(i);
 			fixed light = clamp(dot(fixed3(0, 1, 0), _WorldSpaceLightPos0.xyz), 0, 1) * shadows;
-			fixed3 col = _AmbientColor.rgb + dot((light * i.color * _LightColor0), float3(0.3, 0.59, 0.11));
+
+			//Bubble Check
+			float sdfVal = bubbleVal(i.world_pos);
+			float margin = getMargin();
+
+			//Define Color
+			fixed3 col;
+			float3 fullColor = _AmbientColor.rgb + (light * i.color * _LightColor0);
+			float3 greyScale = _AmbientColor.rgb + dot((light * i.color * _LightColor0), float3(0.3, 0.59, 0.11));
+
+			if (sdfVal < 0) {
+				//Inside Bubble
+				col = fullColor;
+			}
+			else if (sdfVal >=0 && sdfVal <= margin) {
+				//Inbetween
+				float lerpVal = sdfVal / margin;
+				col.x = float(lerp(fullColor.x, greyScale.x, lerpVal));
+				col.y = float(lerp(fullColor.y, greyScale.y, lerpVal));
+				col.z = float(lerp(fullColor.z, greyScale.z, lerpVal));
+			}
+			else {
+			//Outside Bubble
+			col = greyScale;
+			}
+
 			UNITY_APPLY_FOG(i.fogCoord, col);
 
 			//return fixed4(col, 1.0);
@@ -100,6 +128,7 @@
 		#include "UnityCG.cginc"
 		#include "Lighting.cginc"
 		#include "common/DitherAlpha.cginc"
+		#include "common/SpeechBubble.cginc"
 
 		#define POINT /* this pass is for point lights */
 		#include "AutoLight.cginc"
@@ -148,7 +177,32 @@
 		//UNITY_LIGHT_ATTENUATION(attenuation, 0, i.world_pos);
 		fixed shadows = LIGHT_ATTENUATION(i);
 		fixed light = smoothstep(_LightThreshold, _LightThreshold + _LightSmoothness, shadows);
-		fixed3 col = dot((i.color * light * _LightColor0), float3(0.3, 0.59, 0.11));
+
+		//Bubble Check
+		float sdfVal = bubbleVal(i.world_pos);
+		float margin = getMargin();
+
+		//Define Color
+		fixed3 col;
+		float3 fullColor = i.color * light * _LightColor0;;
+		float3 greyScale = dot((i.color * light * _LightColor0), float3(0.3, 0.59, 0.11));
+
+		if (sdfVal < 0) {
+			//Inside Bubble
+			col = fullColor;
+		}
+		else if (sdfVal >= 0 && sdfVal <= margin) {
+			//Inbetween
+			float lerpVal = sdfVal / margin;
+			col.x = float(lerp(fullColor.x, greyScale.x, lerpVal));
+			col.y = float(lerp(fullColor.y, greyScale.y, lerpVal));
+			col.z = float(lerp(fullColor.z, greyScale.z, lerpVal));
+		} 
+		else { 
+			//Outside Bubble
+			col = greyScale;
+		}
+
 		//fixed3 col = _LightColor0;
 
 		UNITY_APPLY_FOG(i.fogCoord, col);
