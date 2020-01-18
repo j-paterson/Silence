@@ -92,16 +92,16 @@
 				float3 fullColor = _AmbientColor.rgb + (light * i.color * _LightColor0);
 				float3 greyScale = _AmbientColor.rgb + dot((light * i.color * _LightColor0), float3(0.3, 0.59, 0.11));
 
-				if (sdfVal < 0) {
+				if (sdfVal < 0 - margin) {
 					//Inside Bubble
 					col = fullColor;
 				}
-				else if (sdfVal >= 0 && sdfVal <= margin) {
+				else if (sdfVal <= 0 && sdfVal >= 0 - margin) {
 					//Inbetween
-					float lerpVal = sdfVal / margin;
-					col.x = float(lerp(fullColor.x, greyScale.x, lerpVal));
-					col.y = float(lerp(fullColor.y, greyScale.y, lerpVal));
-					col.z = float(lerp(fullColor.z, greyScale.z, lerpVal));
+					float lerpVal = abs(sdfVal / margin);
+					col.x = float(lerp(greyScale.x, fullColor.x, lerpVal));
+					col.y = float(lerp(greyScale.y, fullColor.y, lerpVal));
+					col.z = float(lerp(greyScale.z, fullColor.z, lerpVal));
 				}
 				else {
 					//Outside Bubble
@@ -200,16 +200,16 @@
 			float3 fullColor = i.color * light * _LightColor0;
 			float3 greyScale = dot((i.color * light * _LightColor0), float3(0.3, 0.59, 0.11));
 
-			if (sdfVal < 0) {
+			if (sdfVal < 0-margin) {
 				//Inside Bubble
 				col = fullColor;
 			}
-			else if (sdfVal >= 0 && sdfVal <= margin) {
+			else if (sdfVal <= 0 && sdfVal >= 0-margin) {
 				//Inbetween
-				float lerpVal = sdfVal / margin;
-				col.x = float(lerp(fullColor.x, greyScale.x, lerpVal));
-				col.y = float(lerp(fullColor.y, greyScale.y, lerpVal));
-				col.z = float(lerp(fullColor.z, greyScale.z, lerpVal));
+				float lerpVal = abs(sdfVal / margin);
+				col.x = float(lerp(greyScale.x, fullColor.x, lerpVal));
+				col.y = float(lerp(greyScale.y, fullColor.y, lerpVal));
+				col.z = float(lerp(greyScale.z, fullColor.z, lerpVal));
 			}
 			else {
 				//Outside Bubble

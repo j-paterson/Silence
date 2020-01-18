@@ -33,21 +33,21 @@ namespace Prisma
             //Build bubble list
             bubbles = new List<bubble>();
 
-            bubble newBubble = new bubble(0,0,0,1f,Time.time);
-            bubbles.Add(newBubble);
+            //bubble newBubble = new bubble(0,0,0,0f,Time.time);
+            //bubbles.Add(newBubble);
 
-            cBuffer = new ComputeBuffer(bubbles.Count, sizeof(float) * 5);
-            cBuffer.SetData(bubbles);
+            //cBuffer = new ComputeBuffer(bubbles.Count, sizeof(float) * 5);
+            //cBuffer.SetData(bubbles);
 
-            quillPaintMat.SetBuffer("sBuffer", cBuffer);
-            quillPaintMat.SetFloat("numBubbles", bubbles.Count);
+            //quillPaintMat.SetBuffer("sBuffer", cBuffer);
+            //quillPaintMat.SetFloat("numBubbles", bubbles.Count);
         }
 
         public void addBubble(Vector3 position, float amplitude)
         {
             foreach (bubble bub in bubbles)
             {
-                if (Vector3.Distance(position, bub.position) < bub.a + 3)
+                if (Vector3.Distance(position, bub.position) < bub.a*0.75)
                 {
                     return;
                 }
