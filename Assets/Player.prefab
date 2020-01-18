@@ -422,6 +422,7 @@ GameObject:
   - component: {fileID: 2145064447397582011}
   - component: {fileID: 2145064447395361523}
   - component: {fileID: 2145064447396331065}
+  - component: {fileID: 702642313}
   m_Layer: 0
   m_Name: VRCamera
   m_TagString: MainCamera
@@ -518,6 +519,70 @@ Behaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145064447404441641}
   m_Enabled: 1
+--- !u!114 &702642313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145064447404441641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac20df6282234e419ee9915e0fd1676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motionTarget: {fileID: 2145064447404390903}
+  effectColor: {r: 0, g: 0, b: 0, a: 1}
+  effectCoverage: 0.65
+  effectFeather: 0.1
+  effectSkybox: {fileID: 0}
+  applyColorToBackground: 0
+  useAngularVelocity: 1
+  angularVelocityStrength: 1
+  angularVelocityMin: 0
+  angularVelocityMax: 180
+  angularVelocitySmoothing: 0.3
+  useAcceleration: 1
+  accelerationStrength: 1
+  accelerationMin: 0
+  accelerationMax: 0
+  accelerationSmoothing: 0.3
+  useVelocity: 1
+  velocityStrength: 1
+  velocityMin: 0
+  velocityMax: 0
+  velocitySmoothing: 0.3
+  motionEffectTarget: {fileID: 0}
+  useCounterMotion: 0
+  counterRotationStrength: 1
+  counterRotationPerAxis: {x: 0, y: 1, z: 0}
+  useArtificialTilt: 0
+  tiltStrength: 0
+  tiltMaxAngles: {x: 5, y: 5}
+  tiltSmoothTime: 0
+  framerateDivision: 1
+  divideTranslation: 1
+  divideRotation: 1
+  backgroundMode: 0
+  effectOverlay: 0
+  _cageParent: {fileID: 0}
+  cageDownsample: 0
+  cageAntiAliasing: 0
+  cageUpdateEveryFrame: 0
+  cageFogDensity: 0.01
+  cageFogPower: 2
+  cageFogBlend: 1
+  maskMode: 0
+  blurDownsample: 3
+  blurDistance: 3
+  blurPasses: 3
+  blurSamples: 0
+  irisZRejection: 1
+  counterVelocityMode: 0
+  counterVelocityResetDistance: 0
+  counterVelocityResetTime: 0
+  counterVelocityStrength: 1
+  counterVelocityPerAxis: {x: 1, y: 1, z: 1}
 --- !u!1 &2145064447404448715
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,7 +779,7 @@ GameObject:
   - component: {fileID: 2145064447397566715}
   - component: {fileID: 2145064447353369976}
   - component: {fileID: 2145064447353369959}
-  - component: {fileID: 470164705790088161}
+  - component: {fileID: 3879855246053946242}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -785,7 +850,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 3
 --- !u!136 &2145064447353369959
 CapsuleCollider:
@@ -801,7 +866,7 @@ CapsuleCollider:
   m_Height: 1.9666076
   m_Direction: 1
   m_Center: {x: 0, y: 0.25977445, z: 0}
---- !u!114 &470164705790088161
+--- !u!114 &3879855246053946242
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -810,7 +875,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2145064447404460431}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0431a5ce0fd5a4418abb18ffabf07e5, type: 3}
+  m_Script: {fileID: 11500000, guid: d28359600ddf2ee49963ed0088152ba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   RotationSpeed: 50
@@ -826,7 +891,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   jumpHeight: 0
-  MovementSpeed: 6
+  MovementSpeed: 7
   Deadzone: 1
   Head: {fileID: 2145064447404441641}
 --- !u!1 &2145064447404462049
@@ -1950,7 +2015,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2145064447502900221}
   - component: {fileID: 2145064447502900223}
-  - component: {fileID: 1470885250}
+  - component: {fileID: 5249003391076560064}
   m_Layer: 0
   m_Name: MicrophoneObject
   m_TagString: Untagged
@@ -2068,7 +2133,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1470885250
+--- !u!114 &5249003391076560064
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2077,7 +2142,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2145064447502900222}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0aae7bcd9b8cec4eaee6a417b02b221, type: 3}
+  m_Script: {fileID: 11500000, guid: 94fc5d30b703c8744a620236ee3508a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   useVoice:
