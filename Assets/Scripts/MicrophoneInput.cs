@@ -79,7 +79,7 @@
 
                 if (level > volumeSensitivity2)
                 {
-                    bubbleController.addBubble(sphere2.transform.position, (sphere2.GetComponent<SphereCollider>().radius * sphere2.transform.localScale.x * 1));
+                    bubbleController.addBubble(sphere2.transform.position, (sphere2.GetComponent<SphereCollider>().radius * sphere2.transform.localScale.x * 2));
                     //print(level);
                 }
                 else
@@ -90,8 +90,8 @@
 
                 if (level > volumeSensitivity3)
                 {
-                    bubbleController.addBubble(sphere3.transform.position, (sphere3.GetComponent<SphereCollider>().radius * sphere3.transform.localScale.x * 2));
-                    sphere3.SetActive(true);
+                    bubbleController.addBubble(sphere3.transform.position, (sphere3.GetComponent<SphereCollider>().radius * sphere3.transform.localScale.x * 3));
+                    //sphere3.SetActive(true);
                     //print(level);
                 }
                 else
@@ -101,8 +101,8 @@
 
                 if (level > volumeSensitivity4)
                 {
-                    bubbleController.addBubble(sphere3.transform.position, (sphere3.GetComponent<SphereCollider>().radius * sphere3.transform.localScale.x * 3));
-                    sphere4.SetActive(true);
+                    bubbleController.addBubble(sphere3.transform.position, (sphere3.GetComponent<SphereCollider>().radius * sphere3.transform.localScale.x * 4));
+                    //sphere4.SetActive(true);
                     //print(level);
                 }
                 else
@@ -112,8 +112,8 @@
 
                 if (level > volumeSensitivity5)
                 {
-                    bubbleController.addBubble(sphere3.transform.position, (sphere3.GetComponent<SphereCollider>().radius * sphere3.transform.localScale.x * 4));
-                    sphere5.SetActive(true);
+                    bubbleController.addBubble(sphere3.transform.position, (sphere3.GetComponent<SphereCollider>().radius * sphere3.transform.localScale.x * 5));
+                    //sphere5.SetActive(true);
                     //print(level);
                 }
                 else
