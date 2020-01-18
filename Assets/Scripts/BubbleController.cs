@@ -9,19 +9,19 @@ namespace Prisma
         List<bubble> bubbles;
         ComputeBuffer cBuffer;
 
+        public int BubbleCount => bubbles.Count;
+
         struct bubble
         {
-            public float x;
-            public float y;
-            public float z;
+            public Vector3 position;
             public float a;
+            public float t;
 
-            public bubble(float x, float y, float z, float a)
+            public bubble(float x, float y, float z, float a, float time)
             {
-                this.x = x;
-                this.y = y;
-                this.z = z;
+                position = new Vector3(x, y, z);
                 this.a = a;
+                this.t = time;
             }
         }
 
@@ -33,10 +33,10 @@ namespace Prisma
             //Build bubble list
             bubbles = new List<bubble>();
 
-            bubble newBubble = new bubble(0,0,0,1f);
+            bubble newBubble = new bubble(0,0,0,1f,Time.time);
             bubbles.Add(newBubble);
 
-            cBuffer = new ComputeBuffer(bubbles.Count, sizeof(float) * 4);
+            cBuffer = new ComputeBuffer(bubbles.Count, sizeof(float) * 5);
             cBuffer.SetData(bubbles);
 
             quillPaintMat.SetBuffer("sBuffer", cBuffer);
@@ -45,11 +45,19 @@ namespace Prisma
 
         public void addBubble(Vector3 position, float amplitude)
         {
-            var bubble = new bubble(position.x, position.y, position.z, amplitude);
+            foreach (bubble bub in bubbles)
+            {
+                if (Vector3.Distance(position, bub.position) < bub.a + 3)
+                {
+                    return;
+                }
+            }
+               
+            var newBub = new bubble(position.x, position.y, position.z, amplitude, Time.time);
             
-            bubbles.Add(bubble);
+            bubbles.Add(newBub);
 
-            cBuffer = new ComputeBuffer(bubbles.Count, sizeof(float) * 4);
+            cBuffer = new ComputeBuffer(bubbles.Count, sizeof(float) * 5);
             cBuffer.SetData(bubbles);
 
             quillPaintMat.SetBuffer("sBuffer", cBuffer);
