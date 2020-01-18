@@ -127,35 +127,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1470885250, guid: 6490ece0f1fbad1478491be87571888d, type: 3}
-      propertyPath: volumeSensitivity1
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1470885250, guid: 6490ece0f1fbad1478491be87571888d, type: 3}
-      propertyPath: volumeSensitivity2
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1470885250, guid: 6490ece0f1fbad1478491be87571888d, type: 3}
-      propertyPath: volumeSensitivity3
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1470885250, guid: 6490ece0f1fbad1478491be87571888d, type: 3}
-      propertyPath: volumeSensitivity4
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1470885250, guid: 6490ece0f1fbad1478491be87571888d, type: 3}
-      propertyPath: volumeSensitivity5
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1470885250, guid: 6490ece0f1fbad1478491be87571888d, type: 3}
-      propertyPath: quillPaintMat
-      value: 
-      objectReference: {fileID: 2100000, guid: b2d3837a9af8d5e40b42aaaf7be82ab2, type: 2}
-    - target: {fileID: 470164705790088161, guid: 6490ece0f1fbad1478491be87571888d,
-        type: 3}
-      propertyPath: CapCollider
-      value: 
-      objectReference: {fileID: 1821449944}
     - target: {fileID: 2145064447404390903, guid: 6490ece0f1fbad1478491be87571888d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -218,12 +189,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6490ece0f1fbad1478491be87571888d, type: 3}
---- !u!136 &1821449944 stripped
-CapsuleCollider:
-  m_CorrespondingSourceObject: {fileID: 2145064447353369959, guid: 6490ece0f1fbad1478491be87571888d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1706548347}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1958123521
 GameObject:
   m_ObjectHideFlags: 0
