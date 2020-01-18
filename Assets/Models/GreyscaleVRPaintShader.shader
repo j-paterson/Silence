@@ -194,10 +194,10 @@
 		fixed3 col;
 
 		if (_Color != 0) {
-			col = _AmbientColor.rgb + (light * i.color * _LightColor0);
+			col = i.color * light * _LightColor0;
 		}
 		else {
-			float3 fullColor = i.color * light * _LightColor0;;
+			float3 fullColor = i.color * light * _LightColor0;
 			float3 greyScale = dot((i.color * light * _LightColor0), float3(0.3, 0.59, 0.11));
 
 			if (sdfVal < 0) {
