@@ -1220,7 +1220,7 @@ GameObject:
   - component: {fileID: 2145064447397566715}
   - component: {fileID: 2145064447353369976}
   - component: {fileID: 2145064447353369959}
-  - component: {fileID: 2070132600972890281}
+  - component: {fileID: 470164705790088161}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -1307,7 +1307,7 @@ CapsuleCollider:
   m_Height: 1.9666076
   m_Direction: 1
   m_Center: {x: 0, y: 0.25977445, z: 0}
---- !u!114 &2070132600972890281
+--- !u!114 &470164705790088161
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1316,12 +1316,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2145064447404460431}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0431a5ce0fd5a4418abb18ffabf07e5, type: 3}
+  m_Script: {fileID: 11500000, guid: d28359600ddf2ee49963ed0088152ba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   RotationSpeed: 50
   FlipMovementDirection: 0
-  CapCollider: {fileID: 2145064447353369959}
+  CapCollider: {fileID: 0}
   MovementController:
     actionPath: /actions/default/in/JoystickLeft
     needsReinit: 0
@@ -1332,7 +1332,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   jumpHeight: 0
-  MovementSpeed: 10
+  MovementSpeed: 5
   Deadzone: 1
   Head: {fileID: 2145064447404441641}
 --- !u!1 &2145064447404462049
@@ -2583,13 +2583,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2145064447502900222}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0aae7bcd9b8cec4eaee6a417b02b221, type: 3}
+  m_Script: {fileID: 11500000, guid: 94fc5d30b703c8744a620236ee3508a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   useVoice:
     actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
-  quillPaintMat: {fileID: 2100000, guid: b2d3837a9af8d5e40b42aaaf7be82ab2, type: 2}
+  quillPaintMat: {fileID: 0}
   volumeSensitivity1: 0.2
   volumeSensitivity2: 0.3
   volumeSensitivity3: 0.4

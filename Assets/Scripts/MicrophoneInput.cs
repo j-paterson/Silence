@@ -30,6 +30,8 @@
         public GameObject sphere4;
         public GameObject sphere5;
 
+        public int bubbleCount = 0;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -69,7 +71,7 @@
 
                 if (level > volumeSensitivity1)
                 {
-                    bubbleController.addBubble(sphere1.transform.position, (sphere1.GetComponent<SphereCollider>().radius * sphere1.transform.localScale.x));
+                    //bubbleController.addBubble(sphere1.transform.position, (sphere1.GetComponent<SphereCollider>().radius * sphere1.transform.localScale.x));
                 }
                 else
                 {
@@ -79,8 +81,10 @@
 
                 if (level > volumeSensitivity2)
                 {
-                    bubbleController.addBubble(sphere2.transform.position, (sphere2.GetComponent<SphereCollider>().radius * sphere2.transform.localScale.x * 1));
-                    //print(level);
+                    sphere2.SetActive(true);
+                    //bubbleController.addBubble(sphere2.transform.position, (sphere2.GetComponent<SphereCollider>().radius * sphere2.transform.localScale.x * 1));
+                    //bubbleCount++;
+                    //print(bubbleCount);
                 }
                 else
                 {
@@ -92,6 +96,8 @@
                 {
                     bubbleController.addBubble(sphere3.transform.position, (sphere3.GetComponent<SphereCollider>().radius * sphere3.transform.localScale.x * 2));
                     sphere3.SetActive(true);
+                    //bubbleCount++;
+                    //print(bubbleCount);
                     //print(level);
                 }
                 else
@@ -103,6 +109,8 @@
                 {
                     bubbleController.addBubble(sphere3.transform.position, (sphere3.GetComponent<SphereCollider>().radius * sphere3.transform.localScale.x * 3));
                     sphere4.SetActive(true);
+                    //bubbleCount++;
+                    //print(bubbleCount);
                     //print(level);
                 }
                 else
@@ -114,6 +122,8 @@
                 {
                     bubbleController.addBubble(sphere3.transform.position, (sphere3.GetComponent<SphereCollider>().radius * sphere3.transform.localScale.x * 4));
                     sphere5.SetActive(true);
+                    //bubbleCount++;
+                    //print(bubbleCount);
                     //print(level);
                 }
                 else
