@@ -36,6 +36,16 @@
             sampler2D _MainTex;
             float4 _MainTex_ST;
 
+			float3 blobCenter = float3(0, 0, 0);
+			float blobRadius = 0.5;
+
+			sampler2D blobDataTex;
+			int numBlobs;
+
+			//float blobSDF(float3 point) {
+
+			//}
+
             v2f vert (appdata v)
             {
                 v2f o;
