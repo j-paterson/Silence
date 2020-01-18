@@ -38,7 +38,7 @@ float bubbleVal(float3 worldPos) {
 }
 
 float getMargin() {
-	return 8;
+	return 5;
 }
 
 #endif /* SPEECH_BUBBLE */
