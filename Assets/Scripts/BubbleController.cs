@@ -6,8 +6,24 @@ namespace Prisma
     public class BubbleController
     {
         Material quillPaintMat;
-        List<Vector4> bubbles;
+        List<bubble> bubbles;
         ComputeBuffer cBuffer;
+
+        struct bubble
+        {
+            public float x;
+            public float y;
+            public float z;
+            public float a;
+
+            public bubble(float x, float y, float z, float a)
+            {
+                this.x = x;
+                this.y = y;
+                this.z = z;
+                this.a = a;
+            }
+        }
 
         public BubbleController(Material passedMat)
         {
@@ -15,8 +31,11 @@ namespace Prisma
             quillPaintMat = passedMat;
 
             //Build bubble list
-            bubbles = new List<Vector4>();
-            //bubbles.Add(new Vector4(0, 0, 0, 0.1f));
+            bubbles = new List<bubble>();
+
+            bubble newBubble = new bubble(0,0,0,5f);
+
+            bubbles.Add(newBubble);
             //bubbles.Add(new Vector4(0, 1, 0, 0.1f));
             //bubbles.Add(new Vector4(0, 0, 1, 0.1f));
 
@@ -29,7 +48,7 @@ namespace Prisma
 
         public void addBubble(Vector3 position, float amplitude)
         {
-            Vector4 bubble = new Vector4(position.x, position.y, position.z, amplitude);
+            var bubble = new bubble(position.x, position.y, position.z, amplitude);
             
             bubbles.Add(bubble);
 
