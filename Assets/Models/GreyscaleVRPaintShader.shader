@@ -79,6 +79,7 @@
 
 			//Bubble Check
 			float sdfVal = bubbleVal(i.world_pos);
+			float margin = getMargin();
 
 			//Define Color
 			fixed3 col;
@@ -89,16 +90,16 @@
 				//Inside Bubble
 				col = fullColor;
 			}
-			else if (sdfVal > 0.5) {
-				//Outside Bubble
-				col = greyScale;
-			}
-			else {
+			else if (sdfVal >=0 && sdfVal <= margin) {
 				//Inbetween
-				float lerpVal = sdfVal / 0.5;
+				float lerpVal = sdfVal / margin;
 				col.x = float(lerp(fullColor.x, greyScale.x, lerpVal));
 				col.y = float(lerp(fullColor.y, greyScale.y, lerpVal));
 				col.z = float(lerp(fullColor.z, greyScale.z, lerpVal));
+			}
+			else {
+			//Outside Bubble
+			col = greyScale;
 			}
 
 			UNITY_APPLY_FOG(i.fogCoord, col);
@@ -179,25 +180,27 @@
 
 		//Bubble Check
 		float sdfVal = bubbleVal(i.world_pos);
+		float margin = getMargin();
 
 		//Define Color
 		fixed3 col;
 		float3 fullColor = i.color * light * _LightColor0;;
 		float3 greyScale = dot((i.color * light * _LightColor0), float3(0.3, 0.59, 0.11));
+
 		if (sdfVal < 0) {
 			//Inside Bubble
 			col = fullColor;
 		}
-		else if (sdfVal > 0.5) {
-			//Outside Bubble
-			col = greyScale;
-		}
-		else {
+		else if (sdfVal >= 0 && sdfVal <= margin) {
 			//Inbetween
-			float lerpVal = sdfVal / 0.5;
+			float lerpVal = sdfVal / margin;
 			col.x = float(lerp(fullColor.x, greyScale.x, lerpVal));
 			col.y = float(lerp(fullColor.y, greyScale.y, lerpVal));
 			col.z = float(lerp(fullColor.z, greyScale.z, lerpVal));
+		} 
+		else { 
+			//Outside Bubble
+			col = greyScale;
 		}
 
 		//fixed3 col = _LightColor0;
