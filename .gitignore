@@ -74,3 +74,4 @@ Assets/StreamingAssets/SteamVR/actions.json.meta
 Assets/StreamingAssets/SteamVR/actions.json
 Assets/StreamingAssets/SteamVR.meta
 Assets/StreamingAssets.meta
+*.meta
