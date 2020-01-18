@@ -6,7 +6,9 @@
 		_Opacity("Opacity", Range(0.0, 1.0)) = 1.0
 		_LightThreshold("LightThreshold", Range(0.0, 1.0)) = 0.0
 		_LightSmoothness("LightSmoothness", Range(0.0003, 1.0)) = 1.0
+		_ColorBubble("ColorBubble", Vector) = (0, 0, 0, 3)
 	}
+	
 		SubShader
 	{
 		Tags { "RenderType" = "Opaque" "Queue" = "Geometry"}
@@ -36,6 +38,7 @@
 
 			fixed4 _AmbientColor;
 			float _Opacity;
+			float4 _ColorBubble;
 
 			struct appdata
 			{
@@ -65,6 +68,16 @@
 				return o;
 			}
 
+			bool inBubble(v2f i) {
+				float3 bubbleLocation = float3(_ColorBubble.x, _ColorBubble.y, _ColorBubble.z);
+				float radius = _ColorBubble.w;
+				float sdfVal = distance(i.world_pos, bubbleLocation) - radius*100;
+				if (sdfVal < 0) {
+					return true;
+				}
+				return false;
+			}
+
 			fixed4 frag(v2f i) : SV_Target
 			{
 				dither_mask(i.screen_pos, _Opacity * i.color.a);
@@ -73,7 +86,15 @@
 			//fixed light = dot(normalize(i.world_pos), _WorldSpaceLightPos0.xyz);
 			fixed shadows = LIGHT_ATTENUATION(i);
 			fixed light = clamp(dot(fixed3(0, 1, 0), _WorldSpaceLightPos0.xyz), 0, 1) * shadows;
-			fixed3 col = _AmbientColor.rgb + dot((light * i.color * _LightColor0), float3(0.3, 0.59, 0.11));
+			fixed3 col;
+			
+			if (inBubble(i)) {
+				col = _AmbientColor.rgb + dot((light * i.color * _LightColor0), float3(0.3, 0.59, 0.11));
+			}
+			else {
+				col = _AmbientColor.rgb + (light * i.color * _LightColor0);
+			}
+
 			UNITY_APPLY_FOG(i.fogCoord, col);
 
 			//return fixed4(col, 1.0);
@@ -107,6 +128,7 @@
 		fixed _LightSmoothness;
 		fixed _LightThreshold;
 		float _Opacity;
+		float4 _ColorBubble;
 
 		struct appdata
 		{
@@ -124,6 +146,16 @@
 			UNITY_FOG_COORDS(2)
 			LIGHTING_COORDS(3,4)
 		};
+
+		bool inBubble(v2f i) {
+			float3 bubbleLocation = float3(_ColorBubble.x, _ColorBubble.y, _ColorBubble.z);
+			float radius = _ColorBubble.w;
+			float sdfVal = distance(i.world_pos, bubbleLocation) - radius * 100;
+			if (sdfVal > 0) {
+				return true;
+			}
+			return false;
+		}
 
 		v2f vert(appdata v)
 		{
@@ -148,7 +180,16 @@
 		//UNITY_LIGHT_ATTENUATION(attenuation, 0, i.world_pos);
 		fixed shadows = LIGHT_ATTENUATION(i);
 		fixed light = smoothstep(_LightThreshold, _LightThreshold + _LightSmoothness, shadows);
-		fixed3 col = dot((i.color * light * _LightColor0), float3(0.3, 0.59, 0.11));
+		fixed3 col;
+
+		//Bubble Check
+		if (inBubble(i)) {
+			col = dot((i.color * light * _LightColor0), float3(0.3, 0.59, 0.11));
+		}
+		else {
+			col = i.color * light * _LightColor0;
+		}
+
 		//fixed3 col = _LightColor0;
 
 		UNITY_APPLY_FOG(i.fogCoord, col);
