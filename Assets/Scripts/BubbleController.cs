@@ -11,15 +11,17 @@ namespace Prisma
 
         struct bubble
         {
-            public Vector3 position;
+            public float x;
+            public float y;
+            public float z;
             public float a;
-            public float t;
 
-            public bubble(float x, float y, float z, float a, float time)
+            public bubble(float x, float y, float z, float a)
             {
-                position = new Vector3(x, y, z);
+                this.x = x;
+                this.y = y;
+                this.z = z;
                 this.a = a;
-                this.t = time;
             }
         }
 
@@ -31,10 +33,10 @@ namespace Prisma
             //Build bubble list
             bubbles = new List<bubble>();
 
-            bubble newBubble = new bubble(0,0,0,1f,Time.time);
+            bubble newBubble = new bubble(0,0,0,1f);
             bubbles.Add(newBubble);
 
-            cBuffer = new ComputeBuffer(bubbles.Count, sizeof(float) * 5);
+            cBuffer = new ComputeBuffer(bubbles.Count, sizeof(float) * 4);
             cBuffer.SetData(bubbles);
 
             quillPaintMat.SetBuffer("sBuffer", cBuffer);
@@ -43,19 +45,11 @@ namespace Prisma
 
         public void addBubble(Vector3 position, float amplitude)
         {
-            foreach (bubble bub in bubbles)
-            {
-                if (Vector3.Distance(position, bub.position) < bub.a * 0.75)
-                {
-                    return;
-                }
-            }
-               
-            var newBub = new bubble(position.x, position.y, position.z, amplitude, Time.time);
+            var bubble = new bubble(position.x, position.y, position.z, amplitude);
             
-            bubbles.Add(newBub);
+            bubbles.Add(bubble);
 
-            cBuffer = new ComputeBuffer(bubbles.Count, sizeof(float) * 5);
+            cBuffer = new ComputeBuffer(bubbles.Count, sizeof(float) * 4);
             cBuffer.SetData(bubbles);
 
             quillPaintMat.SetBuffer("sBuffer", cBuffer);
