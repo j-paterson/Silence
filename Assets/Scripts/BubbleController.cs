@@ -16,9 +16,9 @@ namespace Prisma
 
             //Build bubble list
             bubbles = new List<Vector4>();
-            bubbles.Add(new Vector4(0, 0, 0, 0.1f));
-            bubbles.Add(new Vector4(0, 1, 0, 0.1f));
-            bubbles.Add(new Vector4(0, 0, 1, 0.1f));
+            //bubbles.Add(new Vector4(0, 0, 0, 0.1f));
+            //bubbles.Add(new Vector4(0, 1, 0, 0.1f));
+            //bubbles.Add(new Vector4(0, 0, 1, 0.1f));
 
             cBuffer = new ComputeBuffer(bubbles.Count, sizeof(float) * 4);
             cBuffer.SetData(bubbles);

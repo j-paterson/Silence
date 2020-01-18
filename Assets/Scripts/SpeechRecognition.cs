@@ -10,8 +10,6 @@ public class SpeechRecognition : MonoBehaviour
     public Text outputText;
     public Button startRecoButton;
 
-    
-
     private object threadLocker = new object();
     private bool waitingForReco;
     private string message;
