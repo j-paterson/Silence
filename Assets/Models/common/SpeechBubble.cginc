@@ -14,7 +14,7 @@ StructuredBuffer<bubble> sBuffer;
 float numBubbles;
 
 float bubbleVal(float3 worldPos) {
-	float sdfVal = 2;
+	float sdfVal = 99;
 
 	for (int i = 0; i < numBubbles; i++) {
 		bubble currBubble = sBuffer[i];
@@ -38,7 +38,7 @@ float bubbleVal(float3 worldPos) {
 }
 
 float getMargin() {
-	return 0.5;
+	return 8;
 }
 
 #endif /* SPEECH_BUBBLE */

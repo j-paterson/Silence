@@ -47,7 +47,7 @@ namespace Prisma
         {
             foreach (bubble bub in bubbles)
             {
-                if (Vector3.Distance(position, bub.position) < bub.a * 0.75)
+                if (Vector3.Distance(position, bub.position) < bub.a + 3)
                 {
                     return;
                 }

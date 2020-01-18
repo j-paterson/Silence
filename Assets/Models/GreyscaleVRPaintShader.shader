@@ -6,7 +6,7 @@
 		_Opacity("Opacity", Range(0.0, 1.0)) = 1.0
 		_LightThreshold("LightThreshold", Range(0.0, 1.0)) = 0.0
 		_LightSmoothness("LightSmoothness", Range(0.0003, 1.0)) = 1.0
-		_ColorBubble("ColorBubble", Vector) = (0, 0, 0, 0.1)
+		_Color("Color", Range(0.0, 1.0)) = 0.0
 	}
 	
 		SubShader
@@ -39,6 +39,7 @@
 
 			fixed4 _AmbientColor;
 			float _Opacity;
+			float _Color;
 
 			struct appdata
 			{
@@ -83,23 +84,29 @@
 
 			//Define Color
 			fixed3 col;
-			float3 fullColor = _AmbientColor.rgb + (light * i.color * _LightColor0);
-			float3 greyScale = _AmbientColor.rgb + dot((light * i.color * _LightColor0), float3(0.3, 0.59, 0.11));
 
-			if (sdfVal < 0) {
-				//Inside Bubble
-				col = fullColor;
-			}
-			else if (sdfVal >=0 && sdfVal <= margin) {
-				//Inbetween
-				float lerpVal = sdfVal / margin;
-				col.x = float(lerp(fullColor.x, greyScale.x, lerpVal));
-				col.y = float(lerp(fullColor.y, greyScale.y, lerpVal));
-				col.z = float(lerp(fullColor.z, greyScale.z, lerpVal));
+			if (_Color != 0) {
+				col = _AmbientColor.rgb + (light * i.color * _LightColor0);
 			}
 			else {
-			//Outside Bubble
-			col = greyScale;
+				float3 fullColor = _AmbientColor.rgb + (light * i.color * _LightColor0);
+				float3 greyScale = _AmbientColor.rgb + dot((light * i.color * _LightColor0), float3(0.3, 0.59, 0.11));
+
+				if (sdfVal < 0) {
+					//Inside Bubble
+					col = fullColor;
+				}
+				else if (sdfVal >= 0 && sdfVal <= margin) {
+					//Inbetween
+					float lerpVal = sdfVal / margin;
+					col.x = float(lerp(fullColor.x, greyScale.x, lerpVal));
+					col.y = float(lerp(fullColor.y, greyScale.y, lerpVal));
+					col.z = float(lerp(fullColor.z, greyScale.z, lerpVal));
+				}
+				else {
+					//Outside Bubble
+					col = greyScale;
+				}
 			}
 
 			UNITY_APPLY_FOG(i.fogCoord, col);
@@ -136,6 +143,7 @@
 		fixed _LightSmoothness;
 		fixed _LightThreshold;
 		float _Opacity;
+		float _Color;
 
 		struct appdata
 		{
@@ -184,23 +192,29 @@
 
 		//Define Color
 		fixed3 col;
-		float3 fullColor = i.color * light * _LightColor0;;
-		float3 greyScale = dot((i.color * light * _LightColor0), float3(0.3, 0.59, 0.11));
 
-		if (sdfVal < 0) {
-			//Inside Bubble
-			col = fullColor;
+		if (_Color != 0) {
+			col = _AmbientColor.rgb + (light * i.color * _LightColor0);
 		}
-		else if (sdfVal >= 0 && sdfVal <= margin) {
-			//Inbetween
-			float lerpVal = sdfVal / margin;
-			col.x = float(lerp(fullColor.x, greyScale.x, lerpVal));
-			col.y = float(lerp(fullColor.y, greyScale.y, lerpVal));
-			col.z = float(lerp(fullColor.z, greyScale.z, lerpVal));
-		} 
-		else { 
-			//Outside Bubble
-			col = greyScale;
+		else {
+			float3 fullColor = i.color * light * _LightColor0;;
+			float3 greyScale = dot((i.color * light * _LightColor0), float3(0.3, 0.59, 0.11));
+
+			if (sdfVal < 0) {
+				//Inside Bubble
+				col = fullColor;
+			}
+			else if (sdfVal >= 0 && sdfVal <= margin) {
+				//Inbetween
+				float lerpVal = sdfVal / margin;
+				col.x = float(lerp(fullColor.x, greyScale.x, lerpVal));
+				col.y = float(lerp(fullColor.y, greyScale.y, lerpVal));
+				col.z = float(lerp(fullColor.z, greyScale.z, lerpVal));
+			}
+			else {
+				//Outside Bubble
+				col = greyScale;
+			}
 		}
 
 		//fixed3 col = _LightColor0;
