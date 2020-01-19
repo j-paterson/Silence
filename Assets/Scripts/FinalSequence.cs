@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinalSequence : MonoBehaviour
 {
@@ -58,6 +59,8 @@ public class FinalSequence : MonoBehaviour
 
             StartCoroutine(ShadowFall());
 
+            StartCoroutine(SceneEnd());
+
         }
     }
 
@@ -98,6 +101,13 @@ public class FinalSequence : MonoBehaviour
         yield return new WaitForSecondsRealtime(2.75f);
         shadow.SetActive(false);
         fallenShadow.SetActive(true);
+    }
+
+    IEnumerator SceneEnd()
+    {
+        yield return new WaitForSecondsRealtime(8.0f);
+
+        Application.Quit();
     }
 
 }

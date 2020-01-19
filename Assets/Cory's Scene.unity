@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &12789222
 Transform:
   m_ObjectHideFlags: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12789221}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51fbc155714fdba4799a289386eb2f76, type: 3}
   m_Name: 
@@ -725,7 +725,7 @@ Transform:
   m_GameObject: {fileID: 171175594}
   m_LocalRotation: {x: -0.39660168, y: -0.028509015, z: 0.0081574535, w: 0.91751176}
   m_LocalPosition: {x: 99.84, y: 21.66, z: 29.24}
-  m_LocalScale: {x: 3.7254, y: 1, z: 14.189755}
+  m_LocalScale: {x: 5.215187, y: 1, z: 14.189755}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 25
@@ -3426,7 +3426,7 @@ Transform:
   m_GameObject: {fileID: 779035601}
   m_LocalRotation: {x: -0.21145564, y: 0.25412676, z: 0.10617718, w: 0.9377806}
   m_LocalPosition: {x: 97.04, y: 13.09, z: 18.21}
-  m_LocalScale: {x: 3.7254, y: 1, z: 14.189755}
+  m_LocalScale: {x: 6.9683604, y: 1, z: 14.189755}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 24
@@ -4084,7 +4084,7 @@ Transform:
   m_GameObject: {fileID: 831985787}
   m_LocalRotation: {x: -0.34868118, y: -0.25844944, z: 0.08038749, w: 0.89730895}
   m_LocalPosition: {x: 96.46, y: 31.09, z: 40.17}
-  m_LocalScale: {x: 3.7254, y: 1, z: 14.189755}
+  m_LocalScale: {x: 5.8499956, y: 1, z: 14.189755}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 26
@@ -4281,6 +4281,53 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.120518, y: 3.8290596, z: 5.946642}
   m_Center: {x: 6.088152, y: 4.260254, z: 5.010503}
+--- !u!1 &887390228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 887390230}
+  - component: {fileID: 887390229}
+  m_Layer: 0
+  m_Name: textStuff
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &887390229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887390228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12ec1e871e946df4b827cb78f15d4b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstText: Pull the trigger and use your Voice to make it stop and change the world.
+  impactPoint: {fileID: 983276839}
+  UIText: {fileID: 1749898960}
+  hasChanged: 0
+--- !u!4 &887390230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887390228}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.19131851, y: 4.8205776, z: -6.3169975}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &891228983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8911,6 +8958,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 604689958, guid: 6490ece0f1fbad1478491be87571888d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 604689959, guid: 6490ece0f1fbad1478491be87571888d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.534
+      objectReference: {fileID: 0}
+    - target: {fileID: 604689959, guid: 6490ece0f1fbad1478491be87571888d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.113
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749898959, guid: 6490ece0f1fbad1478491be87571888d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749898959, guid: 6490ece0f1fbad1478491be87571888d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749898960, guid: 6490ece0f1fbad1478491be87571888d, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749898960, guid: 6490ece0f1fbad1478491be87571888d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.028301895
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749898960, guid: 6490ece0f1fbad1478491be87571888d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.027367398
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749898960, guid: 6490ece0f1fbad1478491be87571888d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.027367398
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749898960, guid: 6490ece0f1fbad1478491be87571888d, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2145064445799971897, guid: 6490ece0f1fbad1478491be87571888d,
         type: 3}
       propertyPath: m_LocalScale.x
