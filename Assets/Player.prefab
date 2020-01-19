@@ -780,6 +780,7 @@ GameObject:
   - component: {fileID: 2145064447353369976}
   - component: {fileID: 2145064447353369959}
   - component: {fileID: 3879855246053946242}
+  - component: {fileID: 456294975}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -894,6 +895,20 @@ MonoBehaviour:
   MovementSpeed: 7
   Deadzone: 1
   Head: {fileID: 2145064447404441641}
+--- !u!136 &456294975
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145064447404460431}
+  m_Material: {fileID: 13400000, guid: 1248406d5fb47544fabb3e08ad83fdb2, type: 2}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.9666076
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.25977445, z: 0}
 --- !u!1 &2145064447404462049
 GameObject:
   m_ObjectHideFlags: 0
