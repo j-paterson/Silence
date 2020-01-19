@@ -11,6 +11,8 @@ public class AreaTriggerForSounds : MonoBehaviour
 
     bool hasPlayed = false;
 
+    public GameObject voicePowers;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,9 +35,17 @@ public class AreaTriggerForSounds : MonoBehaviour
         if(player.name.Contains("Player") && hasPlayed == false)
         {
             source.Play();
+
             hasPlayed = true;
             shadowMonster.SetActive(true);
+            StartCoroutine(ActivateVoicePowers());
         }
     }
+
+    IEnumerator ActivateVoicePowers()
+    {
+        yield return new WaitForSecondsRealtime(3.0f);
+        voicePowers.SetActive(true);
+}
 
 }

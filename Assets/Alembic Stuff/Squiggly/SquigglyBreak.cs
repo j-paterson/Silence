@@ -15,6 +15,8 @@ public class SquigglyBreak : MonoBehaviour
 
     public GameObject shadowMonster;
 
+    public int timesNeeded = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,13 +31,7 @@ public class SquigglyBreak : MonoBehaviour
     void Update()
     {
         
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        GameObject voiceMagic = other.gameObject;
-
-        if (voiceMagic.CompareTag("Voice Magic") && changedToPositive == false)
+        if(timesNeeded >= 10)
         {
             changedToPositive = true;
 
@@ -46,6 +42,17 @@ public class SquigglyBreak : MonoBehaviour
             squigglyRunning2.SetActive(true);
 
             shadowMonster.SetActive(false);
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        GameObject voiceMagic = other.gameObject;
+
+        if (voiceMagic.CompareTag("Voice Magic") && changedToPositive == false)
+        {
+            timesNeeded++;
         }
     }
 
