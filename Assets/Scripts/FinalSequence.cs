@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FinalSequence : MonoBehaviour
 {
-    public Animator shadowAnim;
+    public Animator shadowAnim; 
     public GameObject ImpactPoint;
 
     public float transitionTime = 0.1f;

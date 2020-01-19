@@ -818,6 +818,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &846466017 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5908406813198236319, guid: ec8dbfaa615290c46b9bdcc8542bb5da,
+    type: 3}
+  m_PrefabInstance: {fileID: 968260986}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &846466018 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4572529595743016933, guid: ec8dbfaa615290c46b9bdcc8542bb5da,
@@ -1070,7 +1076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fd1e5057b8a6f340b57c87ae6c4ab0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shadowAnim: {fileID: 0}
+  shadowAnim: {fileID: 846466017}
   ImpactPoint: {fileID: 2118893442}
   transitionTime: 0.1
   readyForNextPhase: 0
