@@ -14,10 +14,7 @@ public class FinalSequence : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //slimeAnim = GetComponent<Animator>();
-        //spikeAnim = GetComponent<Animator>();
 
-        StartBattle();
     }
 
     // Update is called once per frame
@@ -26,13 +23,8 @@ public class FinalSequence : MonoBehaviour
 
     }
 
-    void StartBattle()
+    void BreakPossible()
     {
-        print("Restarting Battle");
-        //slimeAnim.CrossFade("IdleBattle", transitionTime);
-        //spikeAnim.CrossFade("IdleBattle", transitionTime);
-
-        StartCoroutine(WaitForTransition(3.0f));
 
     }
 
