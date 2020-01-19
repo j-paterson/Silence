@@ -54,7 +54,7 @@ public class KidAndAnimalTarget : MonoBehaviour
 
     IEnumerator Disappear()
     {
-        yield return new WaitForSecondsRealtime(5.0f);
+        yield return new WaitForSecondsRealtime(3.5f);
 
         KidWithStick.SetActive(false);
         HappySquiggly.SetActive(false);

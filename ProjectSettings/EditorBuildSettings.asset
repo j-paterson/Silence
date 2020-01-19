@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Cory's Scene.unity
+    guid: 15e86313845dc8d42b1024cbdaa561d9
+  - enabled: 1
+    path: Assets/Scenes/Final.unity
+    guid: 86fe273b7aebb634196470271c7c8c15
   m_configObjects: {}

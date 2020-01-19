@@ -31,10 +31,8 @@ public class VillagersAndShadow : MonoBehaviour
         {
             changedToPositive = true;
 
-            ManFighting.SetActive(false);
-            WomanFighting.SetActive(false);
+            StartCoroutine(Disappear());
 
-            shadowMonster.SetActive(false);
         }
 
     }
@@ -48,4 +46,17 @@ public class VillagersAndShadow : MonoBehaviour
             timesNeeded++;
         }
     }
+
+    IEnumerator Disappear()
+    {
+        yield return new WaitForSecondsRealtime(3.0f);
+
+        ManFighting.SetActive(false);
+        WomanFighting.SetActive(false);
+
+        shadowMonster.SetActive(false);
+
+        //KidWithStick.transform.lossyScale += -0.5f;
+    }
+
 }

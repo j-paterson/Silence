@@ -6,6 +6,8 @@ public class FinalSequence : MonoBehaviour
 {
     public GameObject shadow;
 
+    public GameObject fallenShadow;
+
     Animator anim;
 
     public GameObject ImpactPoint;
@@ -24,6 +26,8 @@ public class FinalSequence : MonoBehaviour
 
     bool hasStartedAnim = false;
 
+    AudioSource glassbreak;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +35,10 @@ public class FinalSequence : MonoBehaviour
         //spikeAnim = GetComponent<Animator>();
 
         StartBattle();
+
+        fallenShadow.SetActive(false);
+
+        glassbreak = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -42,14 +50,13 @@ public class FinalSequence : MonoBehaviour
             hasStartedAnim = true;
             // break glass, fall down.
 
+            glassbreak.Play();
+
             anim.CrossFade("Fallen", 0.1f);
 
-            //anim.SetBool("mirrorBreak", true);
-
-            print("Animating!");
-
-
             ending.PlayDelayed(2.0f);
+
+            StartCoroutine(ShadowFall());
 
         }
     }
@@ -84,6 +91,13 @@ public class FinalSequence : MonoBehaviour
         ImpactPoint.SetActive(true);
 
         canHit = true;
+    }
+
+    IEnumerator ShadowFall()
+    {
+        yield return new WaitForSecondsRealtime(2.75f);
+        shadow.SetActive(false);
+        fallenShadow.SetActive(true);
     }
 
 }

@@ -7,7 +7,11 @@ public class AreaTriggerForSounds : MonoBehaviour
 
     public GameObject shadowMonster;
 
+
+
     public AudioSource source;
+
+    public AudioSource needToStop;
 
     bool hasPlayed = false;
 
@@ -34,6 +38,11 @@ public class AreaTriggerForSounds : MonoBehaviour
 
         if(player.name.Contains("Player") && hasPlayed == false)
         {
+            if(needToStop.isPlaying)
+            {
+                needToStop.Stop();
+            }
+
             source.Play();
 
             hasPlayed = true;
