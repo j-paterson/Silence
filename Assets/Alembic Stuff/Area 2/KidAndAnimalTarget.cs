@@ -18,10 +18,14 @@ public class KidAndAnimalTarget : MonoBehaviour
 
     Animator kidAnim;
 
+    public GameObject impactPoint;
+
     // Start is called before the first frame update
     void Start()
     {
         kidAnim = KidWithStick.GetComponent<Animator>();
+
+        impactPoint.SetActive(false);
     }
 
     // Update is called once per frame
@@ -46,7 +50,7 @@ public class KidAndAnimalTarget : MonoBehaviour
     {
         GameObject voiceMagic = other.gameObject;
 
-        if (voiceMagic.CompareTag("Voice Magic") && changedToPositive == false)
+        if (voiceMagic.CompareTag("Voice Magic") && changedToPositive == false && impactPoint.activeSelf == true)
         {
             timesNeeded++;
         }

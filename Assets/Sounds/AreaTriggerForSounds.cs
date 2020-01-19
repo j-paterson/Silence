@@ -17,6 +17,8 @@ public class AreaTriggerForSounds : MonoBehaviour
 
     public GameObject voicePowers;
 
+    public GameObject impactPoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,8 @@ public class AreaTriggerForSounds : MonoBehaviour
         {
             shadowMonster.SetActive(false);
         }
+
+        impactPoint.SetActive(false);
     }
 
     // Update is called once per frame
@@ -53,8 +57,15 @@ public class AreaTriggerForSounds : MonoBehaviour
 
     IEnumerator ActivateVoicePowers()
     {
-        yield return new WaitForSecondsRealtime(3.0f);
+        yield return new WaitForSecondsRealtime(4.0f);
+        impactPoint.SetActive(true);
         voicePowers.SetActive(true);
-}
+    }
+
+    IEnumerator StopImpactPoint()
+    {
+        yield return new WaitForSecondsRealtime(10.0f);
+        impactPoint.SetActive(false);
+    }
 
 }

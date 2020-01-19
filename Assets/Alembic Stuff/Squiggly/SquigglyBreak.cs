@@ -15,6 +15,8 @@ public class SquigglyBreak : MonoBehaviour
 
     public GameObject shadowMonster;
 
+    public GameObject impactPoint;
+
     public int timesNeeded = 0;
 
     // Start is called before the first frame update
@@ -50,7 +52,7 @@ public class SquigglyBreak : MonoBehaviour
     {
         GameObject voiceMagic = other.gameObject;
 
-        if (voiceMagic.CompareTag("Voice Magic") && changedToPositive == false)
+        if (voiceMagic.CompareTag("Voice Magic") && changedToPositive == false && impactPoint.activeSelf == true)
         {
             timesNeeded++;
         }

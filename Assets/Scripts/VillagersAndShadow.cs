@@ -7,20 +7,18 @@ public class VillagersAndShadow : MonoBehaviour
     public GameObject ManFighting;
     public GameObject WomanFighting;
 
-    public GameObject crowdMember1;
-    public GameObject crowdMember2;
-    public GameObject crowdMember3;
-
     public bool changedToPositive = false;
 
     public GameObject shadowMonster;
 
     public int timesNeeded = 0;
 
+    public GameObject impactPoint;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        impactPoint.SetActive(false);
     }
 
     // Update is called once per frame
@@ -41,7 +39,7 @@ public class VillagersAndShadow : MonoBehaviour
     {
         GameObject voiceMagic = other.gameObject;
 
-        if (voiceMagic.CompareTag("Voice Magic") && changedToPositive == false)
+        if (voiceMagic.CompareTag("Voice Magic") && changedToPositive == false && impactPoint.activeSelf == true)
         {
             timesNeeded++;
         }
