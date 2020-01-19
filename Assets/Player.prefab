@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 2145064445799971878}
   m_Layer: 0
   m_Name: ColorOrigin
-  m_TagString: Voice Magic
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3438,50 +3438,105 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Voice Magic
       objectReference: {fileID: 0}
-    - target: {fileID: 4768359389028772920, guid: a9cba784a68d5164da426cd626d5ea6e,
+    - target: {fileID: 4768359389028772923, guid: a9cba784a68d5164da426cd626d5ea6e,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_LocalPosition.z
+      value: -10.254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768359389028772923, guid: a9cba784a68d5164da426cd626d5ea6e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 45.73037
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768359389028772923, guid: a9cba784a68d5164da426cd626d5ea6e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 45.73037
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768359389028772923, guid: a9cba784a68d5164da426cd626d5ea6e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 45.73037
       objectReference: {fileID: 0}
     - target: {fileID: 4768359389176909553, guid: a9cba784a68d5164da426cd626d5ea6e,
         type: 3}
       propertyPath: m_TagString
       value: Voice Magic
       objectReference: {fileID: 0}
-    - target: {fileID: 4768359389176909553, guid: a9cba784a68d5164da426cd626d5ea6e,
+    - target: {fileID: 4768359389176909556, guid: a9cba784a68d5164da426cd626d5ea6e,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_LocalPosition.z
+      value: -9.3475
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768359389176909556, guid: a9cba784a68d5164da426cd626d5ea6e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 100.7207
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768359389176909556, guid: a9cba784a68d5164da426cd626d5ea6e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 100.7207
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768359389176909556, guid: a9cba784a68d5164da426cd626d5ea6e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 100.7207
       objectReference: {fileID: 0}
     - target: {fileID: 4768359389205169626, guid: a9cba784a68d5164da426cd626d5ea6e,
         type: 3}
       propertyPath: m_TagString
       value: Voice Magic
       objectReference: {fileID: 0}
-    - target: {fileID: 4768359389205169626, guid: a9cba784a68d5164da426cd626d5ea6e,
+    - target: {fileID: 4768359389205169629, guid: a9cba784a68d5164da426cd626d5ea6e,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_LocalPosition.z
+      value: -8.632
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768359389205169629, guid: a9cba784a68d5164da426cd626d5ea6e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 144.71791
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768359389205169629, guid: a9cba784a68d5164da426cd626d5ea6e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 144.71791
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768359389205169629, guid: a9cba784a68d5164da426cd626d5ea6e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 144.71791
       objectReference: {fileID: 0}
     - target: {fileID: 4768359389920035250, guid: a9cba784a68d5164da426cd626d5ea6e,
         type: 3}
       propertyPath: m_TagString
       value: Voice Magic
       objectReference: {fileID: 0}
-    - target: {fileID: 4768359389920035250, guid: a9cba784a68d5164da426cd626d5ea6e,
+    - target: {fileID: 4768359389920035253, guid: a9cba784a68d5164da426cd626d5ea6e,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_LocalPosition.z
+      value: -9.8543
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768359389920035253, guid: a9cba784a68d5164da426cd626d5ea6e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 69.938835
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768359389920035253, guid: a9cba784a68d5164da426cd626d5ea6e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 69.938835
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768359389920035253, guid: a9cba784a68d5164da426cd626d5ea6e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 69.938835
       objectReference: {fileID: 0}
     - target: {fileID: 6311443256592363493, guid: a9cba784a68d5164da426cd626d5ea6e,
         type: 3}
       propertyPath: m_TagString
       value: Voice Magic
-      objectReference: {fileID: 0}
-    - target: {fileID: 6311443256592363493, guid: a9cba784a68d5164da426cd626d5ea6e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7634729664940922168, guid: a9cba784a68d5164da426cd626d5ea6e,
         type: 3}
@@ -3491,7 +3546,7 @@ PrefabInstance:
     - target: {fileID: 7634729664940922168, guid: a9cba784a68d5164da426cd626d5ea6e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8
+      value: 0.519
       objectReference: {fileID: 0}
     - target: {fileID: 7634729664940922168, guid: a9cba784a68d5164da426cd626d5ea6e,
         type: 3}
@@ -3537,6 +3592,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776534391940667446, guid: a9cba784a68d5164da426cd626d5ea6e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.689
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776534391940667446, guid: a9cba784a68d5164da426cd626d5ea6e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 25.791752
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776534391940667446, guid: a9cba784a68d5164da426cd626d5ea6e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 25.791752
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776534391940667446, guid: a9cba784a68d5164da426cd626d5ea6e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 25.791752
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9cba784a68d5164da426cd626d5ea6e, type: 3}
