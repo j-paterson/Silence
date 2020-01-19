@@ -28,7 +28,11 @@
 
         public GameObject colorOrigin;
 
-        public int bubbleCount = 0;
+        public GameObject ring1;
+        public GameObject ring2;
+        public GameObject ring3;
+        public GameObject ring4;
+        public GameObject ring5;
 
         // Start is called before the first frame update
         void Start()
@@ -65,26 +69,78 @@
 
                 level = Mathf.Sqrt(Mathf.Sqrt(levelMax));
 
-                if (level > volumeSensitivity1)
+                if (level > volumeSensitivity5)
                 {
-                    bubbleController.addBubble(colorOrigin.transform.position, colorOrigin.transform.localScale.x*3);
-                } else if (level > volumeSensitivity2)
-                {
-                    bubbleController.addBubble(colorOrigin.transform.position, colorOrigin.transform.localScale.x*6);                    //print(level);
+                    bubbleController.addBubble(colorOrigin.transform.position, colorOrigin.transform.localScale.x * 18);
+                    ring5.SetActive(true);
+                    ring4.SetActive(true);
+                    ring3.SetActive(true);
+                    ring2.SetActive(true);
+                    ring1.SetActive(true);
                 }
-                else if (level > volumeSensitivity3)
-                {
-                    bubbleController.addBubble(colorOrigin.transform.position, colorOrigin.transform.localScale.x*9);
-                }
+
                 else if (level > volumeSensitivity4)
                 {
-                    bubbleController.addBubble(colorOrigin.transform.position, colorOrigin.transform.localScale.x*12);
-                } else if (level > volumeSensitivity5)
-                {
-                    bubbleController.addBubble(colorOrigin.transform.position, colorOrigin.transform.localScale.x*18);
+                    bubbleController.addBubble(colorOrigin.transform.position, colorOrigin.transform.localScale.x * 12);
+
+                    ring5.SetActive(false);
+                    ring4.SetActive(true);
+                    ring3.SetActive(true);
+                    ring2.SetActive(true);
+                    ring1.SetActive(true);
                 }
+
+                else if (level > volumeSensitivity3)
+                {
+                    bubbleController.addBubble(colorOrigin.transform.position, colorOrigin.transform.localScale.x * 9);
+                    ring5.SetActive(false);
+                    ring4.SetActive(false);
+                    ring3.SetActive(true);
+                    ring2.SetActive(true);
+                    ring1.SetActive(true);
+                }
+
+                else if (level > volumeSensitivity2)
+                {
+                    bubbleController.addBubble(colorOrigin.transform.position, colorOrigin.transform.localScale.x * 6);
+                    ring5.SetActive(false);
+                    ring4.SetActive(false);
+                    ring3.SetActive(false);
+                    ring2.SetActive(true);
+                    ring1.SetActive(true);
+                }
+
+                else if (level > volumeSensitivity1)
+                {
+                    bubbleController.addBubble(colorOrigin.transform.position, colorOrigin.transform.localScale.x * 3);
+                    ring5.SetActive(false);
+                    ring4.SetActive(false);
+                    ring3.SetActive(false);
+                    ring2.SetActive(false);
+                    ring1.SetActive(true);
+                }
+
+                else
+                {
+                    ring1.SetActive(false);
+                    ring2.SetActive(false);
+                    ring3.SetActive(false);
+                    ring4.SetActive(false);
+                    ring5.SetActive(false);
+                }
+
             }
-            debug.text = bubbleController.BubbleCount.ToString();
+            else
+            {
+                ring1.SetActive(false);
+                ring2.SetActive(false);
+                ring3.SetActive(false);
+                ring4.SetActive(false);
+                ring5.SetActive(false);
+            }
+
+
+            //debug.text = bubbleController.BubbleCount.ToString();
 
         }
     }
